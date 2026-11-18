@@ -207,7 +207,8 @@
   $("#giftIcon").addEventListener("click", openGift);
   $("#giftButton").addEventListener("click", openGift);
 
-  // Música opcional. No se inicia automáticamente (respeta permisos del navegador).
+  // Música: se intenta reproducir automáticamente, y si el navegador lo bloquea,
+  // arranca con la primera interacción del usuario (click, toque o scroll).
   const musicDialog = $("#musicDialog");
   const audio = $("#audioPlayer");
   const toggleSong = $("#toggleSong");
@@ -221,7 +222,27 @@
     $("#songName").textContent = label;
     updateMusicButton();
   }
-  if (config.musica) setAudioSource(config.musica, "Nuestra canción ♫");
+  if (config.musica) {
+    setAudioSource(config.musica, "Nuestra canción ♫");
+    // Intentar autoplay inmediato
+    const autoplayAttempt = audio.play();
+    if (autoplayAttempt) {
+      autoplayAttempt.then(() => { updateMusicButton(); }).catch(() => {
+        // El navegador bloqueó el autoplay: reproducir con la primera interacción
+        function playOnInteraction() {
+          audio.play().then(() => { updateMusicButton(); }).catch(() => {});
+          document.removeEventListener("click", playOnInteraction);
+          document.removeEventListener("touchstart", playOnInteraction);
+          document.removeEventListener("scroll", playOnInteraction);
+          document.removeEventListener("keydown", playOnInteraction);
+        }
+        document.addEventListener("click", playOnInteraction, { once: false });
+        document.addEventListener("touchstart", playOnInteraction, { once: false });
+        document.addEventListener("scroll", playOnInteraction, { once: false });
+        document.addEventListener("keydown", playOnInteraction, { once: false });
+      });
+    }
+  }
   $("#musicControl").addEventListener("click", () => musicDialog.showModal());
   $("#songInput").addEventListener("change", (event) => {
     const file = event.target.files[0];
@@ -232,7 +253,7 @@
     event.target.value = "";
   });
   toggleSong.addEventListener("click", async () => {
-    if (!audio.paused) { audio.pause(); return; }
+    if (!audio.paused) { audio.pause(); updateMusicButton(); return; }
     try { await audio.play(); } catch { $("#songName").textContent = "No se pudo reproducir. Probá con otro archivo."; }
     updateMusicButton();
   });
