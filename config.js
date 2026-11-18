@@ -18,8 +18,15 @@ window.MI_MUNDO = {
     { fecha: "Lo que viene", titulo: "Una historia que sigue ✨", descripcion: "Todavía nos quedan muchísimos recuerdos por crear juntos." }
   ],
 
-  // Ejemplo: fotos: ["assets/foto1.jpg", "assets/foto2.jpg"]
-  fotos: [],
+  // Agregá las fotos a la carpeta assets/ y listalas acá:
+  fotos: [
+    "assets/WhatsApp Image 2026-11-17 at 21.00.41.jpeg",
+    "assets/WhatsApp Image 2026-11-17 at 21.00.42.jpeg",
+    "assets/WhatsApp Image 2026-11-17 at 21.00.42 (1).jpeg",
+    "assets/WhatsApp Image 2026-11-17 at 21.00.42 (2).jpeg",
+    "assets/WhatsApp Image 2026-11-17 at 21.00.42 (3).jpeg",
+    "assets/WhatsApp Image 2026-11-17 at 21.01.49.jpeg"
+  ],
 
   cartas: [
     { titulo: "Cuando estés triste", mensaje: "Mi amor, si hoy las cosas se sienten difíciles, quiero recordarte algo: no tenés que estar feliz todo el tiempo. Está bien tener días grises. Me gustaría poder darte un abrazo enorme y recordarte cuánto valés. Ojalá estas palabras te hagan sentir un poquito más acompañada. Te quiero muchísimo." },
@@ -97,6 +104,6 @@ window.MI_MUNDO = {
     "Gracias por ser parte de mi vida, por los momentos bonitos y por todo lo que seguimos construyendo."
   ],
 
-  // Ejemplo: musica: "assets/nuestra-cancion.mp3"
-  musica: ""
+  // Canción fija de la web
+  musica: "assets/Soredemo_Sekai_wa_Utsukushii_-_Amefurashi_no_Uta_Beautiful_Rain_(mp3.pm).mp3"
 };
