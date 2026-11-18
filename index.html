@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff5f7">
+  <meta name="description" content="Un rincón especial hecho con amor para Belén.">
+  <title>Nuestro Pequeño Mundo ♡ Para Belén</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#inicio">Ir al contenido</a>
+  <div id="petals" class="petals" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio">♡ <span>Nuestro Pequeño Mundo</span></a>
+    <button id="menuToggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">☰</button>
+    <nav id="navLinks" class="nav-links" aria-label="Navegación principal">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#tiempo">Tiempo</a>
+      <a href="#historia">Historia</a>
+      <a href="#cartas">Cartitas</a>
+      <a href="#razones">Razones</a>
+      <a href="#planes">Planes</a>
+      <a href="#universo">Universo</a>
+      <a href="#sorpresa">Regalo</a>
+    </nav>
+    <button id="musicControl" class="music-control" type="button" aria-label="Configurar música" title="Música opcional">♫ <span>Música</span></button>
+  </header>
+
+  <main>
+    <!-- 1. BIENVENIDA -->
+    <section id="inicio" class="section hero">
+      <div class="floating-heart heart-a" aria-hidden="true">♡</div>
+      <div class="floating-heart heart-b" aria-hidden="true">✦</div>
+      <div class="floating-heart heart-c" aria-hidden="true">♡</div>
+      <div class="floating-heart heart-d" aria-hidden="true">✧</div>
+      <div class="hero-content reveal">
+        <div class="hero-emblem" aria-hidden="true">♥</div>
+        <p class="eyebrow">Un lugar hecho solo para vos</p>
+        <h1>Para vos,<br><em id="heroName">Belén.</em></h1>
+        <p id="heroMessage" class="intro">Entre millones de personas en este mundo, tuve la suerte de encontrarte. Y desde entonces, mis días tienen algo mucho más bonito: vos.</p>
+        <a href="#tiempo" class="button primary">Entrá a nuestro mundo <span aria-hidden="true">♡</span></a>
+        <p class="small-note">Nuestra historia comenzó el <span id="startDateLabel">23 de octubre de 2025</span></p>
+      </div>
+      <div class="hero-scroll" aria-hidden="true">Deslizá para descubrir <span>↓</span></div>
+    </section>
+
+    <!-- 2. CONTADOR -->
+    <section id="tiempo" class="section section-light">
+      <div class="section-content reveal">
+        <p class="eyebrow">Cada segundo vale la pena</p>
+        <h2>Nuestro tiempo juntos <span aria-hidden="true">⏳</span></h2>
+        <p class="section-description">Desde aquel día, cada instante es un pedacito nuevo de nuestra historia.</p>
+        <div class="counter" aria-label="Tiempo transcurrido desde que estamos juntos">
+          <div class="counter-card"><span class="counter-value" id="counterDays">0</span><span class="counter-label">DÍAS</span></div>
+          <div class="counter-card"><span class="counter-value" id="counterHours">00</span><span class="counter-label">HORAS</span></div>
+          <div class="counter-card"><span class="counter-value" id="counterMinutes">00</span><span class="counter-label">MINUTOS</span></div>
+          <div class="counter-card"><span class="counter-value" id="counterSeconds">00</span><span class="counter-label">SEGUNDOS</span></div>
+        </div>
+        <p id="anniversaryMessage" class="anniversary-line"></p>
+        <p class="handwritten">Y todavía nos quedan tantas aventuras por vivir. ♡</p>
+      </div>
+    </section>
+
+    <!-- 3. HISTORIA -->
+    <section id="historia" class="section section-pink">
+      <div class="section-content reveal">
+        <p class="eyebrow">Capítulo tras capítulo</p>
+        <h2>Nuestra historia <span aria-hidden="true">📸</span></h2>
+        <p class="section-description">No importa cuántas historias existan. La nuestra siempre va a ser mi favorita.</p>
+        <div id="timeline" class="timeline"></div>
+        <div class="photos-panel">
+          <div class="photos-panel-header"><span class="tiny-ornament" aria-hidden="true">✿</span><h3>Nuestros recuerdos</h3><p>Un álbum de momentos que siempre quiero guardar.</p></div>
+          <div id="photoGallery" class="photo-gallery" aria-live="polite"></div>
+          <div class="photo-actions">
+            <label class="button secondary input-button" for="photoInput">+ Agregar fotos ahora</label>
+            <input id="photoInput" type="file" accept="image/*" multiple hidden>
+          </div>
+          <p class="helper-text">Las fotos agregadas con el botón se ven solo en este navegador durante la sesión. Para incluirlas permanentemente, usá la carpeta <code>assets</code> y <code>config.js</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. CARTAS -->
+    <section id="cartas" class="section section-light">
+      <div class="section-content reveal">
+        <p class="eyebrow">Palabras que nacen del corazón</p>
+        <h2>Cartitas para vos <span aria-hidden="true">💌</span></h2>
+        <p class="section-description">Hay días en los que las palabras pueden ser como un abrazo. Elegí el sobre que necesites hoy.</p>
+        <div id="lettersGrid" class="letters-grid"></div>
+      </div>
+    </section>
+
+    <!-- 5. RAZONES -->
+    <section id="razones" class="section section-pink">
+      <div class="section-content reveal">
+        <p class="eyebrow">Son infinitas, pero empecemos por algunas</p>
+        <h2>Razones por las que te amo <span aria-hidden="true">💖</span></h2>
+        <p class="section-description">Hay muchas cosas que me enamoran de vos. Tocá el corazón para descubrir una.</p>
+        <button id="heartReason" type="button" class="heart-button" aria-label="Descubrir otra razón">♥</button>
+        <div id="reasonText" class="reason-note" aria-live="polite">Si tuviera que elegir de nuevo, volvería a elegirte a vos.</div>
+        <button id="reasonButton" class="button primary" type="button">Descubrí otra razón ♡</button>
+        <p id="reasonCount" class="helper-text">Un montón de razones para sonreír.</p>
+      </div>
+    </section>
+
+    <!-- 6. PLANES -->
+    <section id="planes" class="section section-light">
+      <div class="section-content reveal">
+        <p class="eyebrow">Más momentos para compartir</p>
+        <h2>Nuestro frasco de planes <span aria-hidden="true">🫙</span></h2>
+        <p class="section-description">No necesitamos grandes cosas para pasarla bien. Solo estar juntos y elegir nuestra próxima aventura.</p>
+        <div class="jar-illustration" aria-hidden="true"><span>♡</span>🫙</div>
+        <label class="select-label" for="planCategory">¿Qué tipo de cita te gustaría?</label>
+        <select id="planCategory">
+          <option value="all">Sorprendeme ✨</option>
+          <option value="casa">En casa 🏠</option>
+          <option value="salir">Salir juntos 🌸</option>
+          <option value="comida">Algo rico 🍰</option>
+          <option value="romantico">Romántico 💗</option>
+        </select>
+        <div id="planText" class="plan-result" aria-live="polite">¿Qué tal si dejamos que el destino elija nuestra próxima cita?</div>
+        <button id="planButton" class="button primary" type="button">Sacar un papelito ✨</button>
+      </div>
+    </section>
+
+    <!-- 7. UNIVERSO -->
+    <section id="universo" class="section sky-section">
+      <div class="section-content reveal">
+        <p class="eyebrow">Un cielo hecho para nosotros</p>
+        <h2>Nuestro universo <span aria-hidden="true">✦</span></h2>
+        <p class="section-description">Cada estrella esconde algo que quiero decirte. Tocá las que más brillan.</p>
+        <div id="starField" class="star-field" aria-label="Estrellas interactivas con mensajes románticos"></div>
+        <p id="starMessage" class="star-message" aria-live="polite">✧ Hay mensajes escondidos entre las estrellas ✧</p>
+      </div>
+    </section>
+
+    <!-- 8. SORPRESA -->
+    <section id="sorpresa" class="section section-pink surprise-section">
+      <div class="section-content reveal">
+        <p class="eyebrow">Guardé lo mejor para el final</p>
+        <h2>Un último regalito para vos <span aria-hidden="true">🎀</span></h2>
+        <p class="section-description">No es algo que se pueda comprar. Es un pedacito de mi corazón hecho especialmente para vos.</p>
+        <button id="giftIcon" type="button" class="gift-button" aria-label="Abrir el regalo">🎁</button>
+        <button id="giftButton" class="button primary" type="button">Abrí tu sorpresa 💗</button>
+        <div id="finalLetter" class="final-letter" hidden>
+          <span class="final-ornament" aria-hidden="true">♡</span>
+          <h3 id="finalTitle">Mi querida Belén...</h3>
+          <div id="finalLetterBody"></div>
+          <div class="final-sig" id="finalSignature">Te amo, Belén. ♡</div>
+          <div aria-hidden="true" class="final-flowers">✿ ♡ ✿</div>
+        </div>
+      </div>
+      <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Hecho con muchísimo amor, solo para <strong id="footerName">Belén</strong> ♡</p>
+    <p class="helper-text">Nuestro Pequeño Mundo · 23.10.2025</p>
+  </footer>
+
+  <!-- Controles de música, opcional y activada solo por la persona -->
+  <dialog id="musicDialog" class="music-dialog">
+    <form method="dialog"><button class="dialog-close" value="close" aria-label="Cerrar">×</button></form>
+    <div class="dialog-icon" aria-hidden="true">♫</div>
+    <h3>Nuestra canción</h3>
+    <p>La música es opcional. Elegí un archivo de audio para acompañar esta historia.</p>
+    <label class="button secondary input-button" for="songInput">Elegir canción</label>
+    <input id="songInput" type="file" accept="audio/*" hidden>
+    <p class="helper-text" id="songName">Todavía no hay canción seleccionada.</p>
+    <button id="toggleSong" class="button primary" type="button" disabled>▶ Reproducir</button>
+    <audio id="audioPlayer" loop preload="none"></audio>
+    <p class="helper-text">Para dejar una canción fija en la web, agregala a <code>assets</code> y configurá su ruta en <code>config.js</code>. Usá audio que tengas permiso de compartir.</p>
+  </dialog>
+
+  <dialog id="letterDialog" class="letter-dialog">
+    <form method="dialog"><button class="dialog-close" value="close" aria-label="Cerrar">×</button></form>
+    <div class="dialog-icon" aria-hidden="true">💌</div>
+    <h3 id="letterDialogTitle"></h3>
+    <p id="letterDialogText"></p>
+    <p class="letter-signature">Con todo mi amor, para vos. ♡</p>
+  </dialog>
+</body>
+</html>
